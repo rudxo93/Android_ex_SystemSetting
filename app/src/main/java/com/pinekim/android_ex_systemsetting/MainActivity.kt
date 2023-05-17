@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private var btnBattery: Button? = null
     private var btnStorage: Button? = null
     private var btnLocation: Button? = null
+    private var btnSecurity: Button? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityMainBinding.inflate(layoutInflater)
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         btnBattery = binding.btnSettingBattery
         btnStorage = binding.btnSettingStorage
         btnLocation = binding.btnSettingLocation
+        btnSecurity = binding.btnSettingSecurity
 
         btnWifi?.setOnClickListener { // 와이파이 연결 이동
             // ACTION_WIFI_IP_SETTINGS - 와이파이>고급 설정 / ACTION_WIFI_SETTINGS - 와이파이 설정
@@ -72,6 +74,12 @@ class MainActivity : AppCompatActivity() {
 
         btnLocation?.setOnClickListener {// 위치 설정 이동
             val i = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(i)
+        }
+
+        btnSecurity?.setOnClickListener {// 보안 설정 이동
+            val i = Intent(Settings.ACTION_SECURITY_SETTINGS)
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(i)
         }
