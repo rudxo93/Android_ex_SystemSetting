@@ -6,4 +6,5 @@
     <string name="btn_display_setting">디스플레이 설정</string>
     <string name="btn_battery_setting">배터리 설정</string>
     <string name="btn_storage_setting">저장공간 설정</string>
+    <string name="btn_location_setting">위치 설정</string>
 </resources>
