@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private var btnWifi: Button? = null
     private var btnBluetooth: Button? = null
     private var btnSound: Button? = null
+    private var btnDisplay: Button? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityMainBinding.inflate(layoutInflater)
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         btnWifi = binding.btnSettingWifi
         btnBluetooth = binding.btnSettingBluetooth
         btnSound = binding.btnSettingSound
+        btnDisplay = binding.btnSettingDisplay
 
         btnWifi?.setOnClickListener { // 와이파이 연결 이동
             // ACTION_WIFI_IP_SETTINGS - 와이파이 고급 설정
@@ -39,6 +41,12 @@ class MainActivity : AppCompatActivity() {
 
         btnSound?.setOnClickListener { // 소리 및 진동 이동
             val i = Intent(Settings.ACTION_SOUND_SETTINGS)
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(i)
+        }
+
+        btnDisplay?.setOnClickListener {// 디스플레이 설정 이동
+            val i = Intent(Settings.ACTION_DISPLAY_SETTINGS)
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(i)
         }
