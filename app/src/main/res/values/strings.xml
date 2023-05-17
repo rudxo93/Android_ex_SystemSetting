@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android_ex_SystemSetting</string>
+    <string name="btn_wifi_setting">와이파이 설정</string>
 </resources>
