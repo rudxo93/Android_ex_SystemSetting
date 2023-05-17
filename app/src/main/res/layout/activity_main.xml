@@ -46,4 +46,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_setting_sound" />
 
+    <Button
+        android:id="@+id/btn_setting_battery"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/btn_battery_setting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_setting_display" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
